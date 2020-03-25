@@ -24,11 +24,11 @@ def scrape_all():
     Hemispheres = ['Cerberus', 'Schiaparelli', 'Syrtis Major', 'Valles Marineris' ]
     DataHemispheres = {}
     for Mars_hemispheres in Hemispheres:
-        DataHemispheres.update({Mars_hemispheres.replace(" ", "_"): GetHemiURL(Mars_hemispheres, browser)})
+        DataHemispheres.update({Mars_hemispheres.replace(" ", "_"): Hem_URL(Mars_hemispheres, browser)})
     browser.quit()
     return data, DataHemispheres
 
-def GetHemiURL(Mars_hemispheres, browser):
+def Hem_URL(Mars_hemispheres, browser):
     print(Mars_hemispheres)
     url = 'https://astrogeology.usgs.gov/search/results?q=hemisphere+enhanced&k1=target&v1=Mars'
     browser.visit(url)
