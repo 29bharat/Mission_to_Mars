@@ -13,7 +13,6 @@ def scrape_all():
         "news_paragraph": news_paragraph,
         "featured_image": featured_image(browser),
         "facts": mars_facts(),
-        # "hemispheres": hemispheres(),
         "last_modified": dt.datetime.now()
     }
 
@@ -72,15 +71,7 @@ def mars_facts():
     return df.to_html()
 
 
-# def hemispheres():
-#     title = ['kitty1','kitty2','kitty3','kitty4']
-#     img_url = ['https://live.staticflickr.com/3397/3551189653_501acccd41_b.jpg','https://live.staticflickr.com/3397/3551189653_501acccd41_b.jpg','https://live.staticflickr.com/3397/3551189653_501acccd41_b.jpg','https://live.staticflickr.com/3397/3551189653_501acccd41_b.jpg']
-
-#     dhems = [{k,v} for k ,v in zip(title, img_url)]
-    
-#     # Convert dataframe into HTML format, add bootstrap
-#     df=pd.DataFrame(dhems)
-#     return df.to_html
+return df.to_html
 
 if __name__ == "__main__":
     # If running as script, print scraped data

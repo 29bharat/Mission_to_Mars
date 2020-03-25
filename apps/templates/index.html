@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<style type="text/css">
+        html, body {
+            margin: 0;
+            border: 0;
+            width: 100%;
+        }
+    
+        body {
+            padding: 0 20px;
+        }
+    
+        #main {
+            margin: 0 auto; /* in case you want to set a fixed width on this as well */
+        }
+</style>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Mission to Mars</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+</head>
+<body>
+    <div id ="main">
+    <!--Mars News-->
+    <div class="contain">
+        <div class="jumbotron text-center">
+            <h1>Mission to Mars</h1>
+            <p><a class="btn btn-primary btn-lg" href="/scrape" role="button">Scrape New Data</a></p>
+        </div>
+    </div>
+    <div class="row" id="mars-news">
+        <div class="col-md-12">
+            <div class="media">
+                <div class="media-body">
+                    <h2>Latest Mars News</h2>
+                    <h4>{{mars.news_title}}</h4>
+                    <p>{{mars.news_paragraph}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Mars Featured Image -->
+    <!--First level -->
+    <div class="row" id="mars-featured-image">
+        <!--Second level -->
+        <div class="col-md-8">
+            <h2>Featured Mars Image</h2>
+            <img src="{{ mars.featured_image | default('static/images/error.png', true) }}" class="img-responsive" alt="Featured Mars Image" />
+        </div>
+        <div class="col-md-4">
+            <!--Mars Facts -->
+            <div class="row" id="mars-facts">
+                <div class="col-md-12">
+                    <h4>Mars Facts</h4>
+                    {{mars.facts | safe }}
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--Mars Hemisphere -->
+    <!--First level -->
+    <div class="row" id="mars-featured-image">
+        <!--Second level -->
+        <div class="col-md-8">
+            <h2>Cerberus Hemisphere Enhanced</h2>
+            <img src="{{ mars_images.Cerberus | default('static/images/error.png', true) }}" class="img-responsive" alt="erberus Hemisphere Enhanced Image" />
+        </div>
+        <div class="col-md-8">
+            <h2>Schiaparelli Hemisphere Enhanced</h2>
+            <img src="{{ mars_images.Schiaparelli | default('static/images/error.png', true) }}" class="img-responsive" alt="Schiaparelli Hemisphere Enhanced Image" />
+        </div>
+        <div class="col-md-8">
+            <h2>Syrtis Major Hemisphere Enhanced</h2>
+            <img src="{{ mars_images.Syrtis_Major | default('static/images/error.png', true) }}" class="img-responsive" alt="Syrtis Major Hemisphere Enhanced Image" />
+        </div>
+        <div class="col-md-8">
+            <h2>Valles Marineris Hemisphere Enhanced</h2>
+            <img src="{{ mars_images.Valles_Marineris | default('static/images/error.png', true) }}" class="img-responsive" alt="Valles Marineris Hemisphere Enhanced Image" />
+        </div>
+    </div>
+</div>
+</body>
+</html>
